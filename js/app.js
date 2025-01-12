@@ -1,31 +1,32 @@
-const input = document.querySelector('input');
-const form = document.querySelector('form');
+const loginInput = document.querySelector('input');
+const loginForm = document.querySelector('#login-form');
 const greeting = document.querySelector('#greeting');
-const h1 = document.querySelector('#h1');
-
+const nameHeading = document.querySelector('#name-heading'); // Correctly target the name heading
 
 function login(event) {
   event.preventDefault();
-  const username = input.value;
+  const username = loginInput.value;
   localStorage.setItem('username', username);
-  form.classList.add('hidden');
-  h1.classList.add('hidden');
+  loginForm.classList.add('hidden');
+  nameHeading.classList.add('hidden'); // Hide the correct heading
   sayHello(username);
 }
 
 function sayHello(username) {
   greeting.innerHTML = `Hello, ${username}.`;
+  document.querySelector('#clock').classList.remove('hidden');
+  document.querySelector('#quote').classList.remove('hidden'); // Access exports via the module
+  document.querySelector('#author').classList.remove('hidden');
+  document.querySelector('#todo-form').classList.remove('hidden');
   greeting.classList.remove('hidden');
-  h1.classList.add('hidden');
 }
 
 const savedUsername = localStorage.getItem('username');
 
 if (savedUsername === null) {
-  h1.classList.remove('hidden');
-  form.classList.remove('hidden');
-  form.addEventListener('submit', login);
+  nameHeading.classList.remove('hidden'); // Show the correct heading
+  loginForm.classList.remove('hidden');
+  loginForm.addEventListener('submit', login);
 } else {
   sayHello(savedUsername);
 }
-

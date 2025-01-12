@@ -117,3 +117,13 @@ const quotes = [
     author: 'Roy T. Bennett',
   },
 ];
+
+quote = document.querySelector('#quote');
+author = document.querySelector('#author');
+
+console.log(quotes[Math.floor(Math.random() * quotes.length)]);
+
+let todaysQuote = quotes[Math.floor(Math.random() * quotes.length)]
+
+quote.innerHTML = todaysQuote.quote;
+author.innerHTML = todaysQuote.author;

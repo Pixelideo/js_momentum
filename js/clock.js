@@ -9,4 +9,4 @@ function getTime() {
 }
 
 getTime();
-setInterval(getTime, 100);
+setInterval(getTime, 500);

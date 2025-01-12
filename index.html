@@ -1,29 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Momentum</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=DM+Serif+Text:ital@0;1&family=Frank+Ruhl+Libre:wght@700&family=Grandiflora+One&family=Noto+Sans+SC:wght@100&family=Poiret+One&family=Radley:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div>
-      <h1 id="clock">00:00:00</h1>
-      <h1 class="hidden" id="h1">Hello, what's your name?</h1>
-      <h1 class="hidden" id="greeting"></h1>
-      <form class="hidden">
-        <input required class="" type="text" maxlength="20" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Momentum App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=DM+Serif+Text:ital@0;1&family=Frank+Ruhl+Libre:wght@700&family=Grandiflora+One&family=Noto+Sans+SC:wght@100&family=Oleo+Script:wght@400;700&family=Poiret+One&family=Radley:ital@0;1&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="font">
+    <section id="clock-sec">
+      <h1 id="clock" class="hidden" aria-live="polite">00:00:00</h1>
+    </section>
+
+    <section id="name-sec">
+      <h1 id="name-heading" class="hidden">Hello, what's your name?</h1>
+      <h2 id="greeting" class="hidden"></h2>
+      <form id="login-form" class="hidden" aria-label="Name Input">
+        <input id="name-input" required placeholder="Enter your name." type="text" maxlength="20">
       </form>
-    </div>
-    <script src="js/app.js"></script>
-    <script src="js/clock.js"></script>
-    <script src="js/quotes.js"></script>
-  </body>
+    </section>
+
+    <form class="hidden" id="todo-form">
+      <input required type="text" placeholder="Write a To Do and Press Enter">
+    </form>
+    <ul id="todo-list"></ul>
+
+    <section id="quote-sec">
+      <p class="hidden" id="quote"></p>
+      <p class="hidden" id="author"></p>
+    </section>
+
+    <section id="weather-sec">
+      <span></span>
+      <span></span>
+    </section>
+
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="js/quotes.js"></script>
+  <script src="js/background.js"></script>
+  <script src="js/todo.js"></script>
+  <script type="module" src="js/weather.js"></script>
+  <script type="module" src="js/config.js"></script>
+
+</body>
+
 </html>

@@ -2,34 +2,217 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
+  margin: 0;
   overflow: hidden;
-  text-align: center;
+  /* Dark background for contrast */
+}
+
+img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  /* Keeps the image in the background */
 }
 
 h1 {
-  text-shadow: 1px 1px 5px rgb(0, 0, 0, 0.6);
-  font-family: Poiret One, Grandiflora One;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+  color: white;
+  margin: 10px 0;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 900;
+  font-family: Oleo Script;
+  user-select: none;
+  transition: all 0.5s ease;
+}
+
+h2 {
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+  color: white;
   font-size: 3rem;
+  margin: 10px 0;
+  text-align: center;
+  font-weight: 400;
+  font-family: Oleo Script, Bagel Fat One;
+  user-select: none;
+  transition: all 0.5s ease;
+}
+
+p,
+span {
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 900;
+  transition: all 0.5s ease;
   user-select: none;
 }
 
+.font {
+  font-family: 'Poiret One', 'Grandiflora One', sans-serif;
+}
+
+#author {
+  color: rgba(211, 211, 211, 0.7)
+}
+
 form {
+  display: flex;
   justify-content: center;
+  margin: 20px 0;
 }
 
 input {
   border-radius: 20px;
-  box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.6);
-  font-size: 20px;
-  height: 30px;
-  background-color: rgb(0, 0, 0, 0);
+  border: 1px solid #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  font-size: 18px;
+  font-weight: bold;
+  height: 35px;
+  width: 300px;
+  padding: 0 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  color: white;
+  outline: none;
+  transition: all 0.5s ease;
 }
 
-div {
-  justify-content: center;
+input:focus {
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+#todo-form input {
+  width: 350px;
+}
+
+#todo-list {
+  list-style-type: none;
+  padding: 0;
+  color: white;
+  text-align: center;
+}
+
+#quote-sec,
+#weather-sec {
+  text-align: center;
 }
 
 .hidden {
   display: none;
+}
+
+#name-sec {
+  /* Add space below the name section */
+}
+
+#todo-form {
+  margin-top: 40px;
+  /* Add space above the todo section */
+}
+
+button {
+  background: none;
+  border: #fff solid 1px;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+}
+
+input:hover {
+  transform: scale(1.05);
+}
+
+input:not(:hover) {
+  transform: scale(1);
+  /* Reset the size when unhovered */
+}
+
+p:hover {
+  transform: scale(1.05);
+  text-shadow: 1px 1px 5px rgba(255, 255, 255, 1);
+}
+
+author:hover {
+  color: #fff;
+}
+
+p:not(:hover) {
+  transform: scale(1);
+  /* Reset the size when unhovered */
+}
+
+span:hover {
+  transform: scale(1.05);
+}
+
+span:not(:hover) {
+  transform: scale(1);
+  /* Reset the size when unhovered */
+}
+
+h1:hover,
+h2:hover {
+  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.7);
+}
+
+li {
+  transition: all 0.5s ease;
+}
+
+li:hover {
+  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.7);
+  transform: scale(1.05);
+}
+
+li:not(:hover) {
+  transform: scale(1);
+}
+
+@keyframes ani {
+  0% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(0.1);
+    opacity: 0;
+    /* Optional: Fading out effect */
+  }
+}
+
+.animate {
+  animation: ani 0.4s ease-in-out;
+}
+
+@keyframes addAni {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.add-animate {
+  animation: addAni 0.3s ease-out;
 }
