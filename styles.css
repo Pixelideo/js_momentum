@@ -1,0 +1,35 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  text-align: center;
+}
+
+h1 {
+  text-shadow: 1px 1px 5px rgb(0, 0, 0, 0.6);
+  font-family: Poiret One, Grandiflora One;
+  font-size: 3rem;
+  user-select: none;
+}
+
+form {
+  justify-content: center;
+}
+
+input {
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.6);
+  font-size: 20px;
+  height: 30px;
+  background-color: rgb(0, 0, 0, 0);
+}
+
+div {
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
