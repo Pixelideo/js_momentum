@@ -1,8 +1,6 @@
 import config from "./config.js";
 const { API_KEY } = config;
 
-console.log(API_KEY);
-
 function onGeoOk(position) {
     let lat = position.coords.latitude;
     let lng = position.coords.longitude;
